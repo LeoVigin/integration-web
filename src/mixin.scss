@@ -1,0 +1,69 @@
+$primary-color: #585858;
+$secondary-color: #eeeeee;
+$background-color: #dfdfdf;
+$hover-color: #3b3b3b;
+$border-color: #d7d7d7;
+$text-btn-color: white;
+$size: clamp(10rem, 1rem + 40vmin, 30rem);
+$gap: calc($size / 14);
+$duration: 60s;
+$scroll-start: 0;
+$scroll-end: calc(-100% - $gap);
+$title: "Space Grotesk", sans-serif;
+$text: "Vend Sans", sans-serif;
+
+@mixin up($from) {
+  @media (width > $from) {
+    @content;
+  }
+}
+@mixin section-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@mixin section-column($column) {
+  display: grid;
+  grid-template-columns: repeat($column, 1fr);
+  justify-items: center;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+}
+@mixin title($size) {
+  font-family: $title;
+  font-size: $size;
+  font-weight: bold;
+}
+@mixin text {
+  font-family: $text;
+}
+@mixin button1 {
+  background-color: $primary-color;
+  color: $text-btn-color;
+  border-radius: 2rem;
+  padding: 10px;
+  font-family: $text;
+  transition: 0.2s;
+}
+@mixin button2($color) {
+  display: flex;
+  border: 1.5px solid $color;
+  border-radius: 2rem;
+  font-family: $text;
+  transition: 0.2s;
+}
+@mixin button-img {
+  width: 20px;
+  margin: 0.4rem;
+}
+@mixin button1-hover {
+  transition: 0.2s;
+  background-color: $hover-color;
+}
+@mixin button2-hover {
+  background-color: $primary-color;
+  border: 1.5px solid white;
+  color: $text-btn-color;
+  transition: 0.2s;
+}
